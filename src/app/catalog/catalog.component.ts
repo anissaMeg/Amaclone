@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CatalogService } from '../catalog.service';
 import { ProductModel, PRODUCT_LIST } from '../product-model';
 
 @Component({
@@ -9,11 +10,14 @@ import { ProductModel, PRODUCT_LIST } from '../product-model';
 export class CatalogComponent implements OnInit {
 
 
-  public products:ProductModel[] = PRODUCT_LIST;
+  public products:ProductModel[] = [];
+  
 
-  constructor() { }
+  constructor( private catalogService:CatalogService ) { 
+  }
 
   ngOnInit(): void {
+    this.products = this.catalogService.getAll();
   }
 
 }

@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1, 
+        "name": "Jeu vidéo", 
+        "desc": "Un super jeu vidéo", 
+        "category": "videogames", 
+        "price": 80, 
+        "img": "/assets/img/videogame.jpg"
+    },
+    {
+        "id": 2, 
+        "name": "Velo", 
+        "desc": "Un super velo", 
+        "category": "velo", 
+        "price": 120, 
+        "img": "/assets/img/velo.jpg"
+    },
+    {
+        "id": 3, 
+        "name": "Plante verte", 
+        "desc": "Une superbe plante verte qu'elle est jolie.", 
+        "category": "plants", 
+        "price": 15, 
+        "img": "/assets/img/plant.jpg"
+    }
+]

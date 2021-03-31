@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { CatalogService } from '../catalog.service';
 import { ProductModel, PRODUCT_LIST } from '../product-model';
 
 @Component({
@@ -9,12 +10,13 @@ import { ProductModel, PRODUCT_LIST } from '../product-model';
 })
 export class DetailComponent implements OnInit {
 
-  private route:ActivatedRoute;
+  
   public product:ProductModel|null = null;
 
-  constructor( param_route:ActivatedRoute ) { 
-    this.route = param_route;
-  }
+  constructor( 
+    private route:ActivatedRoute, 
+    private catalogService:CatalogService
+  ) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe( 
@@ -24,14 +26,9 @@ export class DetailComponent implements OnInit {
           return;
 
         const id:number = parseInt(str);
-        // for( let i:number = 0; i < PRODUCT_LIST.length; i++ ){
-        //   if( PRODUCT_LIST[i].id === id )
-        //     this.product = PRODUCT_LIST[i];
-        // }
-
-        this.product = PRODUCT_LIST.find( p => p.id === id ) || null;
+        this.product = this.catalogService.getById(id);
       }
-    )
+    );
   }
 
 }
