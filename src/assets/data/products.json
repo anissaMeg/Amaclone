@@ -1,7 +1,7 @@
 [
     {
         "id": 1, 
-        "name": "Jeu vidéo", 
+        "name": "Mario Sunshine", 
         "desc": "Un super jeu vidéo", 
         "category": "videogames", 
         "price": 80, 

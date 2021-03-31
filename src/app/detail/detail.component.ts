@@ -26,7 +26,11 @@ export class DetailComponent implements OnInit {
           return;
 
         const id:number = parseInt(str);
-        this.product = this.catalogService.getById(id);
+        this.catalogService.getById(id).subscribe( 
+          (product:ProductModel | null) => {
+            this.product = product;
+          }
+        );
       }
     );
   }
