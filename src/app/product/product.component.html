@@ -9,6 +9,8 @@
         <p>{{data.desc}}</p>
         <button>Ajouter au panier</button>
     </div>
+
+    <button *ngIf="preview" routerLink="/detail/{{data.id}}">Voir détails</button>
     
     
 </div>
